@@ -1,0 +1,21 @@
+diff --git a/shareLinkCreator b/shareLinkCreator
+index 55ad150..ef4baa2 100755
+--- a/shareLinkCreator
++++ b/shareLinkCreator
+@@ -38,8 +38,15 @@
+ # - xclip
+ # - zenity
+ 
++CONFIGPATH="${XDG_CONFIG_HOME:-$HOME/.config}/sharelinkcreator.config"
++EXAMPLE="/usr/share/doc/sharelinkcreator/examples/config.sample"
++if [[ ! -f "$CONFIGPATH" ]]; then
++    zenity --error --width=400 --text="Config file $CONFIGPATH doesn't exist\!\nPlease create a new one based off\n$EXAMPLE."
++    exit 1
++fi
++
+ # load config parameters
+-. "$(dirname $0)/config"
++. "$CONFIGPATH"
+ 
+ # constants
+ TRUE=0

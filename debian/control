@@ -1,0 +1,18 @@
+Source: sharelinkcreator
+Section: web
+Priority: optional
+Maintainer: James Lu <james@overdrivenetworks.com>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.4
+# Waiting for pending patches
+#Homepage: https://github.com/schiessle/shareLinkCreator
+Vcs-Git: https://github.com/jlu5/shareLinkCreator
+Vcs-Browser: https://github.com/jlu5/shareLinkCreator
+
+Package: sharelinkcreator
+Architecture: all
+Depends: ${misc:Depends}, curl, xclip, zenity
+Recommends: libnotify-bin
+Description: public link generator for Nextcloud
+ Share Link Creator is a simple script which uploads files and folders to
+ Nextcloud and creates a public link for easy sharing.
